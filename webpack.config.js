@@ -12,9 +12,27 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: 'babel-loader',
+        test: /\.tsx?$/, // Aplica o ts-loader apenas em arquivos .ts e .tsx
+        use: 'ts-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/, // Aplica o css-loader e style-loader apenas em arquivos .css
+        use: ['style-loader', 'css-loader'],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(jpg|jpeg|png|gif)$/i, // Aplica o file-loader apenas em arquivos de imagem
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/', // Pasta onde as imagens serão colocadas dentro de 'dist'
+              publicPath: 'images/', // Caminho público para acessar as imagens
+            },
+          },
+        ],
       },
     ],
   },
