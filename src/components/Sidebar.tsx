@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-//import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'; // Importa ícones de redes sociais
-import '../../public/Sidebar.css'; // Crie o CSS correspondente
+import '../../public/Sidebar.css';
+import gitHubIcon from './img/github.png';
+import linkedinIcon from './img/linkedin.png';
+import instagramIcon from './img/instagram.png';
 
 const Sidebar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,15 +10,34 @@ const Sidebar: React.FC = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${menuOpen ? 'open' : ''}`}>
       <button className="menu-btn" onClick={toggleMenu}>&#9776;</button>
-      <div className="menu">
-        <p>Desenvolvedor Full Stack</p>
-        <div className="social-icons">
-          <a href="https://github.com/seuusuario" target="_blank" rel="noopener noreferrer"></a>
-          <a href="https://linkedin.com/in/seuusuario" target="_blank" rel="noopener noreferrer"></a>
-          <a href="https://twitter.com/seuusuario" target="_blank" rel="noopener noreferrer"></a>
-        </div>
+      
+      {/* Texto que desaparece quando o menu está aberto */}
+      <div className="sidebar-title">Desenvolvedor Full Stack</div> 
+      <div className="icons-links">
+      <a href="https://github.com/Leon-brum" target="_blank" rel="noopener noreferrer">
+            {
+              <img src={gitHubIcon} alt="" />
+            }
+          </a>
+          <a href="https://www.linkedin.com/in/leonardo-moreno-b8015a294/" target="_blank" rel="noopener noreferrer">
+            {
+              <img src={linkedinIcon} alt="" />
+            }
+          </a>
+          <a href="https://www.instagram.com/leo_morenolm" target="_blank" rel="noopener noreferrer">
+            {
+              <img src={instagramIcon} alt="" />
+            }
+          </a>
+      </div>
+      {/* Menu que aparece quando aberto */}
+      <div className={`menu ${menuOpen ? 'open' : ''}`}>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
       </div>
     </div>
   );

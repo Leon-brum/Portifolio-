@@ -3,15 +3,16 @@
   top: 0;
   right: 0;
   height: 100%;
-  width: 60px; /* Largura da barra lateral */
-  background-color: #333;
+  width: 80px;
+  background-color: #2a2a2a;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding-top: 20px;
   color: white;
-  z-index: 1000; /* Certifica-se de que a barra esteja acima do conteúdo */
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-btn {
@@ -20,16 +21,34 @@
   border: none;
   padding: 15px;
   cursor: pointer;
-  border-radius: 0; /* Isso cria o quadrado */
   font-size: 24px;
   margin-bottom: 20px;
+  transition: background-color 0.3s ease-in-out;
 }
 
+.menu-btn:hover {
+  background-color: #ff5733; /* Cor ao passar o mouse */
+}
+
+.icons-links {
+  display: flex;
+  margin-bottom: 50px;
+  writing-mode: vertical-rl;
+}
+
+.icons-links img {
+  width: 20px;
+  margin-bottom: 15px;
+}
 .menu {
   display: none;
   flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
   align-items: center;
+  height: 100%; /* Garante que a altura do menu ocupe toda a barra lateral */
   width: 100%;
+  margin-bottom: 750px;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .menu.open {
@@ -38,20 +57,71 @@
 
 .menu p {
   margin: 10px 0;
+  text-align: center;
+  color: #bbb; /* Cor do texto mais suave */
+  font-size: 16px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 10px 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu a:hover {
+  color: #ec4a2c;
+}
+
+.sidebar-title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 22px;
+  color: white;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+  transform: rotate(180deg);
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+.sidebar.open .sidebar-title {
+  opacity: 0;
+}
+
+.sidebar.open .icons-links {
+  opacity: 0;
 }
 
 .social-icons {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .social-icons a {
   color: white;
-  font-size: 20px;
-  margin: 10px 0;
+  font-size: 24px;
+  margin: 15px 0;
   text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
 .social-icons a:hover {
   color: #ec4a2c;
+}
+
+/* Efeito de abrir/fechar menu */
+.sidebar.open {
+  width: 250px; /* Expande a barra lateral ao abrir */
+}
+
+.sidebar.open .menu {
+  display: flex;
+}
+
+.sidebar.open .menu-btn {
+  background-color: #444;
+  margin-bottom: 40px;
 }
