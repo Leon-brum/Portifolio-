@@ -1,0 +1,75 @@
+/* Seção 'About' */
+.about-container {
+  background-color: #333840; /* Mesma cor da seção esquerda do Home */
+  padding: 50px;
+  color: #fff;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* Título da Seção */
+.about-container h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Parágrafo da Seção */
+.about-container p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #d1d1d1;
+}
+
+/* Título das Tecnologias */
+.about-container h3 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #3498db;
+}
+
+/* Container dos Balões de Tecnologias */
+.balao-tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Balões Individuais de Tecnologia */
+.balao-tecnologia {
+  background-color: #444c56;
+  color: #ffffff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.balao-tecnologia img {
+  width: 50px;
+}
+
+/* Balão Ativo (visível) */
+.balao-tecnologia.ativo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 30px;
+  }
+  
+  .balao-tecnologia {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}

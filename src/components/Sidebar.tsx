@@ -13,7 +13,6 @@ const Sidebar: React.FC = () => {
     <div className={`sidebar ${menuOpen ? 'open' : ''}`}>
       <button className="menu-btn" onClick={toggleMenu}>&#9776;</button>
       
-      {/* Texto que desaparece quando o menu está aberto */}
       <div className="sidebar-title">Desenvolvedor Full Stack</div> 
       <div className="icons-links">
       <a href="https://github.com/Leon-brum" target="_blank" rel="noopener noreferrer">
@@ -32,11 +31,10 @@ const Sidebar: React.FC = () => {
             }
           </a>
       </div>
-      {/* Menu que aparece quando aberto */}
       <div className={`menu ${menuOpen ? 'open' : ''}`}>
+        <a href="#about" className="menu-link" >Sobre</a>
         <a href="#projetos">Projetos</a>
         <a href="#contato">Contato</a>
-        <a href="#sobre">Sobre</a>
         <a href="#habilidades">Habilidades</a>
       </div>
     </div>

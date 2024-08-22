@@ -1,9 +1,9 @@
 import React from 'react';
-import '../../public/Home.css'; // Importa o arquivo CSS para estilização
+import '../../public/Home.css';
 import minhafoto from './img/foto.jpg';
 const Home: React.FC = () => {
   return (
-    <div className="container">
+    <div className="container" id="home">
       <div className="left-section">
         <div className="branding">
           <h1>Dev</h1>
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
         </div>
       </div>
       <div className="right-section">
-        <img src={minhafoto} alt="Foto do Leonardo" />
+        <img className='myFoto' src={minhafoto} alt="Foto do Leonardo" />
       </div>
     </div>
   );
