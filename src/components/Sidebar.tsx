@@ -32,6 +32,7 @@ const Sidebar: React.FC = () => {
           </a>
       </div>
       <div className={`menu ${menuOpen ? 'open' : ''}`}>
+        <a href="#home" className="menu-link" >Home</a>
         <a href="#about" className="menu-link" >Sobre</a>
         <a href="#projetos">Projetos</a>
         <a href="#contato">Contato</a>

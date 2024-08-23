@@ -4,6 +4,7 @@ import '../public/styles.css';
 import Home from './components/Home';
 import Sidebar from './components/Sidebar';
 import About from './components/About';
+import Services from './components/Services';
 
 
 const App: React.FC = () => {
@@ -40,6 +41,7 @@ const App: React.FC = () => {
       <Home />
       <Sidebar />
       <About />
+      <Services />
     </div>
   );
 };
