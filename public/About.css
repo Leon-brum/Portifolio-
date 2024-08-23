@@ -1,7 +1,7 @@
 /* Seção 'About' */
 .about-container {
   background-color: #333840;
-  padding: 50px 10%;
+  padding: 10px 8%;
   color: #fff;
   text-align: left;
   height: 100vh;
@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
+
 }
 
 /* Título da Seção */
