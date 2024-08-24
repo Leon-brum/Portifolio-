@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import '../public/styles.css';
 import Home from './components/Home';
@@ -6,42 +6,60 @@ import Sidebar from './components/Sidebar';
 import About from './components/About';
 import Services from './components/Services';
 
+const sections = ['home', 'about', 'services'];
 
 const App: React.FC = () => {
-  useEffect(() => {
-    let lastScrollTop = 0;
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-    const handleScroll = () => {
-      const currentScroll = window.pageYOffset;
-      
-      if (currentScroll > lastScrollTop) {
+  useEffect(() => {
+    const handleWheel = (event: WheelEvent) => {
+      if (isTransitioning) {
+        event.preventDefault(); // Previne o scroll durante a transição
+        return;
+      }
+
+      if (event.deltaY > 0 && currentSectionIndex < sections.length - 1) {
+        // Scroll down
+        goToSection(currentSectionIndex + 1);
+      } else if (event.deltaY < 0 && currentSectionIndex > 0) {
+        // Scroll up
+        goToSection(currentSectionIndex - 1);
+      }
+    };
+
+    const goToSection = (index: number) => {
+      setIsTransitioning(true);
+      setCurrentSectionIndex(index);
+
+      const sectionId = sections[index];
+      const sectionElement = document.getElementById(sectionId);
+
+      if (sectionElement) {
         window.scrollTo({
-          top: document.getElementById("about")?.offsetTop,
-          behavior: 'smooth'
-        });
-      } else if (currentScroll < lastScrollTop) {
-        window.scrollTo({
-          top: document.getElementById("home")?.offsetTop,
-          behavior: 'smooth'
+          top: sectionElement.offsetTop,
+          behavior: 'smooth',
         });
       }
 
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      // Delay para desativar o bloqueio do scroll até a transição estar completa
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 50); // Tempo de transição
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('wheel', handleWheel, { passive: false });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('wheel', handleWheel);
     };
-  }, []);
-  
+  }, [currentSectionIndex, isTransitioning]);
   return (
     <div>
-      <Home />
+      <div id='home'><Home /></div>
+      <div id='about'><About /></div>
+      <div id='services'><Services /></div>
       <Sidebar />
-      <About />
-      <Services />
     </div>
   );
 };
