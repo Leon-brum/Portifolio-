@@ -36,7 +36,7 @@ const Sidebar: React.FC = () => {
         <a href="#about" className="menu-link" >Sobre</a>
         <a href="#services" className="menu-link" >Serviços</a>
         <a href="#projects" className="menu-link" >Projetos</a>
-        <a href="#contato">Contato</a>
+        <a href="#contact" className="menu-link" >Contato</a>
       </div>
     </div>
   );

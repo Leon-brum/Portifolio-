@@ -6,8 +6,9 @@ import Sidebar from './components/Sidebar';
 import About from './components/About';
 import Services from './components/Services';
 import Projects from './components/Projects';
+import Contact from './components/Contact';
 
-const sections = ['home', 'about', 'services', 'projects'];
+const sections = ['home', 'about', 'services', 'projects', 'contact'];
 
 const App: React.FC = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
@@ -61,6 +62,7 @@ const App: React.FC = () => {
       <div id='about'><About /></div>
       <div id='services'><Services /></div>
       <div id='projects'><Projects /></div>
+      <div id='contact'><Contact /></div>
       <Sidebar />
     </div>
   );

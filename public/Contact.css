@@ -1,0 +1,117 @@
+.contact-container {
+  background-color: #1c1e21; /* Fundo escuro conforme o restante do portfólio */
+  padding: 10px 0;
+  height: 100vh;
+  color: #ffffff; /* Cor do texto */
+  display: flex;
+  justify-content: center;
+}
+
+.contact-content {
+  width: 80%;
+  max-width: 1200px;
+}
+
+.contact-content h1 {
+  margin-top: 100px;
+  margin-bottom: 150px;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  padding: 0 50px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.contact-form {
+  width: 60%;
+}
+
+.contact-form h2 {
+  color: #007bff; /* Azul para títulos */
+}
+
+.contact-form p {
+  color: #c2c2c2; /* Cor do texto secundário */
+  margin-bottom: 20px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 15px;
+  font-size: 1.2em;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #2b2f33; /* Fundo dos inputs */
+  border: 1px solid #4e555b;
+  color: #c2c2c2;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background-color: #007bff; /* Azul do botão */
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3; /* Efeito hover do botão */
+}
+
+.email-direct-link {
+  color: #007bff;
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.email-direct-link:hover {
+  text-decoration: underline;
+}
+
+.contact-details {
+  margin-left: 300px;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.contact-details h3 {
+  color: #ffffff;
+}
+
+.contact-details p {
+  color: #007bff;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 1.5em;
+  margin-right: 15px;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+a {
+  color: inherit; /* Mantém a cor do texto do pai */
+  text-decoration: underline; /* Mantém o sublinhado */
+}
