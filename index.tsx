@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import '../public/styles.css';
-import Home from './components/Home';
-import Sidebar from './components/Sidebar';
-import About from './components/About';
-import Services from './components/Services';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import './public/styles.css';
+import Home from './src/components/Home';
+import Sidebar from './src/components/Sidebar';
+import About from './src/components/About';
+import Services from './src/components/Services';
+import Projects from './src/components/Projects';
+import Contact from './src/components/Contact';
 
 const sections = ['home', 'about', 'services', 'projects', 'contact'];
 

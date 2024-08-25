@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "build": "react-scripts build",
     "start": "webpack serve --mode development"
   },
   "repository": {
