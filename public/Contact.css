@@ -100,11 +100,15 @@
 .contact-details p {
   color: #007bff;
 }
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 0.2fr);
+}
 
 .social-icons a {
   color: #ffffff;
-  font-size: 1.5em;
   margin-right: 15px;
+  margin: 1px;
 }
 
 .social-icons a:hover {
@@ -114,4 +118,18 @@
 a {
   color: inherit; /* Mantém a cor do texto do pai */
   text-decoration: underline; /* Mantém o sublinhado */
+}
+
+.iconInstagram{
+  width: 55px;
+  margin-bottom: 10px;
+}
+
+.iconGithub {
+  width: 35px;
+}
+
+.iconLinkedin {
+  width: 35px;
+  margin-top: 7px;
 }

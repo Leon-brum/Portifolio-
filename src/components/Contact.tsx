@@ -1,5 +1,8 @@
 import React from 'react';
 import '../../public/Contact.css';
+import githubIconColor from './img/gitHubColor.png';
+import instagramIconColor from './img/instagramLogoColor.png';
+import linkedinLogoColor from './img/linkedinLogoColor.png';
 
 const Contact = () => {
   return (
@@ -13,11 +16,11 @@ const Contact = () => {
             Se quiser saber mais sobre mim ou meu trabalho, ou se quiser apenas dar um oi, me mande uma mensagem. Eu adoraria ouvir de você.
             </p>
             <form>
-              <label>Name</label>
+              <label>Nome</label>
               <input type="text" placeholder="Enter your name" />
               <label>Email</label>
               <input type="email" placeholder="Enter your email" />
-              <label>Message</label>
+              <label>Menssagem</label>
               <textarea placeholder="Enter your message"></textarea>
               <button type="submit">Submit</button>
             </form>
@@ -40,10 +43,9 @@ const Contact = () => {
             <div>
               <h3>Social</h3>
               <div className="social-icons">
-                <a href="#"><i className="fab fa-stack-overflow"></i></a>
-                <a href="#"><i className="fab fa-instagram"></i></a>
-                <a href="#"><i className="fab fa-github"></i></a>
-                <a href="#"><i className="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/leo_morenolm" target="_blank"><img className='iconInstagram' src={instagramIconColor} alt="" /></a>
+                <a href="https://github.com/Leon-brum" target="_blank"><img className='iconGithub' src={githubIconColor} alt="" /></a>
+                <a href="https://www.linkedin.com/in/leonardo-moreno-b8015a294/" target="_blank"><img className='iconLinkedin' src={linkedinLogoColor} alt="" /></a>
               </div>
             </div>
           </div>
