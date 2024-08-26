@@ -4,17 +4,17 @@
   padding: 50px 10%;
   color: #fff;
   text-align: left;
-  height: 100vh;
+  min-height: 100vh; /* Alterado de 'height' para 'min-height' */
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-
+  box-sizing: border-box;
+  overflow: hidden; /* Evitar que o conteúdo transborde */
 }
 
 /* Título da Seção */
 .about-container h2 {
-  
   font-size: 48px;
   margin-bottom: 20px;
   color: #fff;
@@ -40,7 +40,7 @@
 .balao-tecnologias {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center; /* Alinhar ao centro para responsividade */
   gap: 20px;
 }
 
@@ -56,6 +56,7 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  box-sizing: border-box;
 }
 .balao-tecnologia img {
   width: 50px;
@@ -69,20 +70,49 @@
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .about-container {
-    padding: 30px;
+    padding: 40px 5%; /* Reduzir padding em telas menores */
   }
   
   .balao-tecnologia {
-    font-size: 16px;
-    padding: 10px 20px;
+    min-width: 150px; /* Ajustar o tamanho mínimo dos balões */
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 30px 5%; /* Reduzir padding em dispositivos móveis */
+  }
+  
+  .balao-tecnologias {
+    justify-content: center;
+    gap: 15px; /* Reduzir o espaçamento entre os balões */
+  }
+
+  .balao-tecnologia {
+    min-width: 120px; /* Reduzir o tamanho dos balões ainda mais em telas menores */
+    padding: 10px 10px;
+  }
+
+  .balao-tecnologia img {
+    width: 40px; /* Ajustar o tamanho da imagem nos balões */
+    margin-right: 10px;
+  }
+
+  .about-container h2 {
+    font-size: 36px; /* Ajustar o tamanho da fonte do título */
+  }
+
+  .about-container p {
+    font-size: 18px; /* Ajustar o tamanho da fonte do parágrafo */
   }
 }
 
 .balao-tecnologia span {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #fff;
-  margin-left: 25px;
-  margin-right: 8px;
+  margin-left: 15px;
+  margin-right: 5px;
 }

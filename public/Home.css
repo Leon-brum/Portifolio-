@@ -1,14 +1,16 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #2c3e50;
+  background-color: #2c3e50; /* Cor de fundo aplicada apenas ao corpo */
+  overflow-x: hidden; /* Evita vazamento horizontal */
 }
 
 .container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh; /* Garante que a altura ocupe a tela inteira sem exceder */
   width: 100%;
   color: #fff;
+  background-color: #2c3e50; /* Cor de fundo aplicada à container */
 }
 
 .left-section {
@@ -94,4 +96,20 @@ body {
 .right-section img {
   width: 80%;
   border-radius: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Empilha as seções em dispositivos móveis */
+  }
+
+  .left-section, .right-section {
+    width: 100%; /* Seções ocupam 100% da largura */
+    padding: 20px;
+  }
+
+  .right-section img {
+    width: 100%; /* Imagem ocupa a largura total */
+  }
 }

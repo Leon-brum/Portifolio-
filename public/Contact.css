@@ -1,42 +1,52 @@
 .contact-container {
-  background-color: #1c1e21; /* Fundo escuro conforme o restante do portfólio */
-  padding: 10px 0;
-  height: 100vh;
-  color: #ffffff; /* Cor do texto */
+  background-color: #1c1e21;
+  padding: 20px 0; /* Um pouco mais de padding para espaçamento */
+  min-height: 100vh; /* Garante que a altura se ajuste ao conteúdo */
+  color: #ffffff;
   display: flex;
   justify-content: center;
+  align-items: center; /* Centraliza verticalmente */
+}
+.contact-container a {
+  color: inherit; /* Mantém a cor do texto do pai */
+  text-decoration: underline; /* Mantém o sublinhado */
 }
 
 .contact-content {
-  width: 80%;
+  width: 90%; /* Aumenta a largura disponível */
   max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact-content h1 {
-  margin-top: 100px;
-  margin-bottom: 150px;
+  margin-top: 50px; /* Reduzido para melhorar o espaço */
+  margin-bottom: 100px; /* Reduzido para melhorar o espaço */
   font-size: 2.5rem;
-  display: flex;
-  justify-content: center;
-  padding: 0 50px;
+  text-align: center;
 }
 
 .contact-info {
   display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
   justify-content: space-between;
   gap: 50px;
+  width: 100%;
 }
 
 .contact-form {
-  width: 60%;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 50px; /* Espaçamento inferior para distanciar o conteúdo */
 }
 
 .contact-form h2 {
-  color: #007bff; /* Azul para títulos */
+  color: #007bff;
 }
 
 .contact-form p {
-  color: #c2c2c2; /* Cor do texto secundário */
+  color: #c2c2c2;
   margin-bottom: 20px;
 }
 
@@ -52,7 +62,7 @@
 
 .contact-form input,
 .contact-form textarea {
-  background-color: #2b2f33; /* Fundo dos inputs */
+  background-color: #2b2f33;
   border: 1px solid #4e555b;
   color: #c2c2c2;
   padding: 10px;
@@ -61,7 +71,7 @@
 }
 
 .contact-form button {
-  background-color: #007bff; /* Azul do botão */
+  background-color: #007bff;
   color: #fff;
   padding: 10px;
   border: none;
@@ -71,7 +81,7 @@
 }
 
 .contact-form button:hover {
-  background-color: #0056b3; /* Efeito hover do botão */
+  background-color: #0056b3;
 }
 
 .email-direct-link {
@@ -86,11 +96,12 @@
 }
 
 .contact-details {
-  margin-left: 300px;
-  width: 35%;
+  width: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-bottom: 50px; /* Para alinhar com o formulário */
 }
 
 .contact-details h3 {
@@ -100,27 +111,23 @@
 .contact-details p {
   color: #007bff;
 }
+
 .social-icons {
-  display: grid;
-  grid-template-columns: repeat(3, 0.2fr);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 .social-icons a {
   color: #ffffff;
-  margin-right: 15px;
-  margin: 1px;
+  font-size: 24px;
 }
 
 .social-icons a:hover {
   color: #007bff;
 }
 
-a {
-  color: inherit; /* Mantém a cor do texto do pai */
-  text-decoration: underline; /* Mantém o sublinhado */
-}
-
-.iconInstagram{
+.iconInstagram {
   width: 55px;
   margin-bottom: 10px;
 }
@@ -132,4 +139,25 @@ a {
 .iconLinkedin {
   width: 35px;
   margin-top: 7px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column; /* Coloca os itens em coluna em telas pequenas */
+    align-items: center;
+  }
+
+  .contact-form {
+    width: 100%; /* Ocupa 100% da largura */
+  }
+
+  .contact-details {
+    width: 100%; /* Ocupa 100% da largura */
+  }
+
+  .social-icons {
+    justify-content: center; /* Centraliza os ícones sociais */
+    gap: 15px;
+  }
 }

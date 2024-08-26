@@ -1,3 +1,4 @@
+/* Estilo da Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
@@ -13,8 +14,10 @@
   color: white;
   z-index: 1000;
   transition: all 0.3s ease-in-out;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra para dar destaque */
 }
 
+/* Botão de Menu */
 .menu-btn {
   background-color: #ec4a2c;
   color: white;
@@ -27,9 +30,10 @@
 }
 
 .menu-btn:hover {
-  background-color: #ff5733; /* Cor ao passar o mouse */
+  background-color: #ff5733;
 }
 
+/* Links Ícones */
 .icons-links {
   display: flex;
   margin-bottom: 50px;
@@ -40,6 +44,8 @@
   width: 20px;
   margin-bottom: 15px;
 }
+
+/* Menu Oculto */
 .menu {
   display: none;
   flex-direction: column;
@@ -58,7 +64,7 @@
 .menu p {
   margin: 10px 0;
   text-align: center;
-  color: #bbb; /* Cor do texto mais suave */
+  color: #bbb;
   font-size: 16px;
 }
 
@@ -73,6 +79,7 @@
   color: #ec4a2c;
 }
 
+/* Título da Sidebar */
 .sidebar-title {
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -83,7 +90,6 @@
   transform: rotate(180deg);
 }
 
-
 .sidebar.open .sidebar-title {
   opacity: 0;
 }
@@ -92,6 +98,7 @@
   opacity: 0;
 }
 
+/* Ícones Sociais */
 .social-icons {
   display: flex;
   flex-direction: column;
@@ -109,16 +116,69 @@
   color: #ec4a2c;
 }
 
-/* Efeito de abrir/fechar menu */
+/* Efeito de Abrir/Fechar Menu */
 .sidebar.open {
-  width: 250px; /* Expande a barra lateral ao abrir */
-}
-
-.sidebar.open .menu {
-  display: flex;
+  width: 250px; /* Expande a sidebar */
 }
 
 .sidebar.open .menu-btn {
   background-color: #444;
   margin-bottom: 40px;
+}
+
+/* Estilo do Conteúdo Principal para evitar sobreposição */
+.main-content {
+  transition: margin-right 0.3s ease-in-out;
+  margin-right: 80px; /* Ajuste para corresponder à largura da sidebar contraída */
+}
+
+.sidebar.open ~ .main-content {
+  margin-right: 250px; /* Ajuste para corresponder à largura da sidebar expandida */
+}
+
+/* Responsividade para Dispositivos Móveis */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px; /* Sidebar mais estreita em telas menores */
+  }
+
+  .sidebar.open {
+    width: 200px; /* Sidebar expandida menos larga em telas menores */
+  }
+
+  .main-content {
+    margin-right: 60px;
+  }
+
+  .sidebar.open ~ .main-content {
+    margin-right: 200px;
+  }
+
+  .menu-btn {
+    padding: 10px; /* Ajuste do padding para o botão de menu */
+    font-size: 20px; /* Ajuste do tamanho da fonte para o botão de menu */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 50px; /* Sidebar ainda mais estreita em telas muito pequenas */
+  }
+
+  .sidebar.open {
+    width: 180px; /* Sidebar expandida menos larga em telas muito pequenas */
+  }
+
+  .main-content {
+    margin-right: 50px;
+  }
+
+  .sidebar.open ~ .main-content {
+    margin-right: 180px;
+  }
+
+  .menu-btn {
+    padding: 8px;
+    font-size: 18px;
+  }
 }

@@ -1,3 +1,4 @@
+/* Animação */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -9,36 +10,43 @@
   }
 }
 
+/* Seção de Serviços */
 .services-container {
   background-color: #333840;
-  padding: 10px 2%;
+  padding: 50px 10%;
   color: #fff;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh; /* Alterado de 'height' para 'min-height' */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden; /* Evitar que o conteúdo transborde */
 }
 
+/* Título da Seção */
 .services-container h1 {
   font-size: 2.5rem;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
   color: #fff;
 }
 
+/* Subtítulo */
 .services-container h2 {
   font-size: 1.8rem;
   margin-bottom: 40px;
-  margin-right: 720px;
   color: #468dfb; /* Cor do subtítulo */
 }
 
+/* Container de Serviços */
 .services {
   display: flex;
   justify-content: center;
-  gap: 250px;
+  flex-wrap: wrap; /* Permitir que os itens quebrem linha */
+  gap: 40px;
 }
 
+/* Estilo de Serviço */
 .service {
   opacity: 0;
   transform: scale(0.8);
@@ -46,9 +54,11 @@
   background-color: #222;
   border-radius: 8px;
   padding: 20px;
-  width: 300px; /* Largura fixa */
+  width: 100%; /* Ajustar largura para 100% em telas menores */
+  max-width: 300px; /* Limite de largura */
   text-align: center;
   transition: transform 0.3s ease;
+  box-sizing: border-box;
 }
 
 /* Estilo quando os quadrados estão visíveis */
@@ -81,4 +91,49 @@
   font-size: 1.2rem;
   color: #ddd;
   line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .services-container {
+    padding: 40px 5%; /* Reduzir padding em telas menores */
+  }
+  
+  .services-container h1 {
+    font-size: 2rem; /* Ajustar tamanho do título */
+  }
+  
+  .services-container h2 {
+    font-size: 1.6rem; /* Ajustar tamanho do subtítulo */
+    margin-right: 0; /* Remover margem em telas menores */
+  }
+
+  .services {
+    gap: 30px; /* Ajustar o espaçamento entre os serviços */
+  }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    padding: 30px 5%; /* Reduzir padding ainda mais para dispositivos móveis */
+  }
+
+  .services-container h1 {
+    font-size: 1.8rem; /* Ajustar tamanho do título */
+  }
+  
+  .services-container h2 {
+    font-size: 1.4rem; /* Ajustar tamanho do subtítulo */
+    text-align: center; /* Centralizar subtítulo em dispositivos móveis */
+  }
+
+  .services {
+    flex-direction: column; /* Exibir serviços em uma coluna */
+    align-items: center;
+    gap: 20px; /* Reduzir ainda mais o espaçamento entre os serviços */
+  }
+
+  .service {
+    max-width: 100%; /* Largura completa para serviços em telas menores */
+  }
 }

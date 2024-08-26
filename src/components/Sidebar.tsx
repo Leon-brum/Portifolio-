@@ -7,7 +7,11 @@ import instagramIcon from './img/instagram.png';
 const Sidebar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleMenu = () => {
+    console.log("Menu state before toggle:", menuOpen); // Verifique o estado antes de alternar
+    setMenuOpen(!menuOpen);
+    console.log("Menu state after toggle:", !menuOpen); // Verifique o estado após alternar
+  };
 
   return (
     <div className={`sidebar ${menuOpen ? 'open' : ''}`}>
@@ -15,28 +19,22 @@ const Sidebar: React.FC = () => {
       
       <div className="sidebar-title">Desenvolvedor Full Stack</div> 
       <div className="icons-links">
-      <a href="https://github.com/Leon-brum" target="_blank" rel="noopener noreferrer">
-            {
-              <img src={gitHubIcon} alt="" />
-            }
-          </a>
-          <a href="https://www.linkedin.com/in/leonardo-moreno-b8015a294/" target="_blank" rel="noopener noreferrer">
-            {
-              <img src={linkedinIcon} alt="" />
-            }
-          </a>
-          <a href="https://www.instagram.com/leo_morenolm" target="_blank" rel="noopener noreferrer">
-            {
-              <img src={instagramIcon} alt="" />
-            }
-          </a>
+        <a href="https://github.com/Leon-brum" target="_blank" rel="noopener noreferrer">
+          <img src={gitHubIcon} alt="GitHub" />
+        </a>
+        <a href="https://www.linkedin.com/in/leonardo-moreno-b8015a294/" target="_blank" rel="noopener noreferrer">
+          <img src={linkedinIcon} alt="LinkedIn" />
+        </a>
+        <a href="https://www.instagram.com/leo_morenolm" target="_blank" rel="noopener noreferrer">
+          <img src={instagramIcon} alt="Instagram" />
+        </a>
       </div>
       <div className={`menu ${menuOpen ? 'open' : ''}`}>
-        <a href="#home" className="menu-link" >Home</a>
-        <a href="#about" className="menu-link" >Sobre</a>
-        <a href="#services" className="menu-link" >Serviços</a>
-        <a href="#projects" className="menu-link" >Projetos</a>
-        <a href="#contact" className="menu-link" >Contato</a>
+        <a href="#home" className="menu-link">Home</a>
+        <a href="#about" className="menu-link">Sobre</a>
+        <a href="#services" className="menu-link">Serviços</a>
+        <a href="#projects" className="menu-link">Projetos</a>
+        <a href="#contact" className="menu-link">Contato</a>
       </div>
     </div>
   );
