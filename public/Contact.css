@@ -114,8 +114,10 @@
 
 .social-icons {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row; /* Garante que os ícones fiquem lado a lado */
+  gap: 20px; /* Espaçamento entre os ícones */
   margin-top: 20px;
+  align-items: center; /* Centraliza verticalmente se necessário */
 }
 
 .social-icons a {

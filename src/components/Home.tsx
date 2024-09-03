@@ -16,7 +16,7 @@ const Home: React.FC = () => {
             aprendizado, me dedico a melhorar minhas habilidades e entregar
             soluções criativas e eficientes.
           </p>
-          <button className="portfolio-btn"><a href="#projects"></a>Ver projetos</button>
+          <button className="portfolio-btn"><a href="#meus-projetos"></a>Ver projetos</button>
         </div>
       </div>
       <div className="right-section">
